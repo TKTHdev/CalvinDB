@@ -182,7 +182,8 @@ void ClusterManager::ClusterStatus() {
 
     // Same stuff with DeployCluster
     string ssh_command = "ssh " + ssh_key(it->first)  + " " + ssh_username_ + "@" + host
-                         + "  'cd " + calvin_path_ + "; bin/scripts/" + binary_
+                         + "  'export LD_LIBRARY_PATH=" + calvin_path_ + "/ext/glog/.libs:" + calvin_path_ + "/ext/protobuf/src/.libs:" + calvin_path_ + "/ext/zeromq/src/.libs:" + calvin_path_ + "/ext/gflags/.libs; "
+                         + "cd " + calvin_path_ + "; bin/scripts/" + binary_
                          + "  --calvin_version=true" + "  --machine_id="
                          + IntToString(machine_id) + "'";
     int status = system(ssh_command.c_str());
