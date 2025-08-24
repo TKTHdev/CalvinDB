@@ -70,7 +70,7 @@ all:
 MAKEFILE_TEMPLATE := Makefile.template
 
 # python obj file used by some components
-PYTHON_OBJS := /usr/lib64/libpython2.7.so
+PYTHON_OBJS := /usr/lib/x86_64-linux-gnu/libpython2.7.so
 
 # Makefile fragments for specific submodules
 include proto/Makefile.inc
