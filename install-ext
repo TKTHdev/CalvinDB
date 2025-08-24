@@ -1,5 +1,24 @@
 #!/bin/bash
 
+# --- Install/Update Core Build Tools ---
+echo "--- Installing/Updating core build tools ---"
+sudo apt-get update
+sudo apt-get install -y \
+    build-essential \
+    autoconf \
+    automake \
+    libtool \
+    pkg-config \
+    wget \
+    git \
+    unzip \
+    tar \
+    cmake \
+    libreadline-dev \
+    subversion \
+    libsnappy-dev
+echo "--- Core build tools installed/updated. ---"
+
 # MODIFIED SCRIPT TO PREVENT COMPILER ERRORS AND IMPROVE ROBUSTNESS
 #
 # This script builds libraries that often fail with modern compilers (e.g., g++ > 6).
@@ -35,7 +54,6 @@ if [ ! -d "gflags" ]; then
     mv gflags-2.0/ gflags
 fi
 cd gflags
-# The CXXFLAGS exported above are automatically used by ./configure
 ./configure --prefix=$PWD
 make -j$CPU_CORES
 make install
@@ -54,7 +72,6 @@ if [ ! -d "glog" ]; then
     rm -f v0.3.4.tar.gz
 fi
 cd glog
-# We must tell glog where to find the gflags we just built.
 CPPFLAGS="-I$BUILD_DIR/gflags/include" LDFLAGS="-L$BUILD_DIR/gflags/lib" ./configure --prefix=$PWD
 make -j$CPU_CORES
 make install
