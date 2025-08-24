@@ -129,8 +129,7 @@ void ClusterManager::DeployCluster(int experiment, int percent_mp, int percent_m
     threads.resize(threads.size()+1);
     string* ssh_command = new string(
          "ssh " + ssh_key(it->first)  + " "+ ssh_username_ + "@" + it->second.host() +
-         "  'export LD_LIBRARY_PATH=" + calvin_path_ + "/ext/glog/.libs:" + calvin_path_ + "/ext/protobuf/src/.libs:" + calvin_path_ + "/ext/zeromq/src/.libs:" + calvin_path_ + "/ext/gflags/.libs; " +
-         "cd " + calvin_path_ + "; " + " bin/scripts/" + binary_ +
+         "  'cd " + calvin_path_ + "; " + " bin/scripts/" + binary_ +
          " --machine_id=" + IntToString(it->second.id()) + " --mode=" + IntToString(mode_) + " --type=" + IntToString(type_) +
          "  --config=" + config_file_ + " --experiment=" + IntToString(experiment) + " --percent_mp=" + IntToString(percent_mp) + " --percent_mr=" + IntToString(percent_mr) + 
          " --hot_records=" + IntToString(hot_records) + " --max_batch_size=" + IntToString(max_batch_size) + " ' &");
@@ -183,8 +182,7 @@ void ClusterManager::ClusterStatus() {
 
     // Same stuff with DeployCluster
     string ssh_command = "ssh " + ssh_key(it->first)  + " " + ssh_username_ + "@" + host
-                         + "  'export LD_LIBRARY_PATH=" + calvin_path_ + "/ext/glog/.libs:" + calvin_path_ + "/ext/protobuf/src/.libs:" + calvin_path_ + "/ext/zeromq/src/.libs:" + calvin_path_ + "/ext/gflags/.libs; "
-                         + "cd " + calvin_path_ + "; bin/scripts/" + binary_
+                         + "  'cd " + calvin_path_ + "; bin/scripts/" + binary_
                          + "  --calvin_version=true" + "  --machine_id="
                          + IntToString(machine_id) + "'";
     int status = system(ssh_command.c_str());
