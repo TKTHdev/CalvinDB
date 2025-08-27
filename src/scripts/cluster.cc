@@ -8,7 +8,7 @@
 
 DEFINE_string(command, "status", "cluster command");
 DEFINE_string(config, "calvin.conf", "conf file of Calvin cluster");
-DEFINE_string(calvin_path, "/home/ubuntu/CalvinDB", "path to the main calvin directory");
+DEFINE_string(calvin_path, "/home/debian/CalvinDB", "path to the main calvin directory");
 DEFINE_string(binary, "calvindb_server", "Calvin binary executable program");
 DEFINE_string(lowlatency_binary, "lowlatency_calvindb_server", "Lowlatency Calvin binary executable program");
 DEFINE_string(ssh_key1, "", "ssh_key for the first data center(Virginia)");
