@@ -176,3 +176,9 @@ CalvinDBのTPC-C実装は以下のトランザクションタイプをサポー�
 - TPC-C実装ファイル: `src/applications/tpcc.cc`, `src/applications/tpcc.h`
 - サーバー起動スクリプト: `src/scripts/calvindb_server.cc`
 - 設定関連: `calvin.conf`
+
+bashrcはこれ
+
+```bashrc
+LD_LIBRARY_PATH=/home/tkt/Documents/GitHub/CalvinDB/ext/zeromq/src/.libs:/home/tkt/Documents/GitHub/CalvinDB/ext/protobuf/src/.libs:/home/tkt/Documents/GitHub/CalvinDB/ext/glog/.libs:/home/tkt/Documents/GitHub/CalvinDB/ext/gflags/.libs ./bin/scripts/calvindb_server
+```
