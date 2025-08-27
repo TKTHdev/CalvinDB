@@ -22,7 +22,7 @@ class ClusterManager {
                  const string& binary, const uint32& mode, const uint32& type,
                  const string& ssh_key1, const string& ssh_key2, const string& ssh_key3)
       : config_file_(config_file), calvin_path_(calvin_path), binary_(binary), mode_(mode), type_(type),
-        ssh_username_("ubuntu"), ssh_key1_(ssh_key1), ssh_key2_(ssh_key2), ssh_key3_(ssh_key3) {
+        ssh_username_("debian"), ssh_key1_(ssh_key1), ssh_key2_(ssh_key2), ssh_key3_(ssh_key3) {
     config_.FromFile(config_file_);
     num_replicas_ = 3;
   }
