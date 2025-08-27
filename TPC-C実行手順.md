@@ -36,7 +36,7 @@ CalvinDBは、決定論的な手法を活用してアクティブレプリケー
 `~/.bashrc`にライブラリパスを追加：
 
 ```bash
-export LD_LIBRARY_PATH=~/CalvinDB/ext/zeromq/src/.libs:~/CalvinDB/ext/protobuf/src/.libs:~/CalvinDB/ext/glog/.libs:~/CalvinDB/ext/gflags/.libs
+LD_LIBRARY_PATH=/home/ubuntu/CalvinDB/ext/zeromq/src/.libs:/home/ubuntu/CalvinDB/ext/protobuf/src/.libs:/home/ubuntu/CalvinDB/ext/glog/.libs:/home/ubuntu/CalvinDB/ext/gflags/.libs ./bin/scripts/calvindb_server
 ```
 
 設定を反映：
